@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Vue Instance Lifecycle</title>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js'
+                },
+                beforeCreate: function(){
+                    console.log("BeforeCreate");
+                },
+                created: function(){
+                    console.log("Created");
+                },
+                mounted: function(){
+                    console.log("Mounted");
+                    this.message = 'Hello Vue!';
+                },
+                beforeUpdate: function(){
+                    console.log("BeforeUpdate");
+                },
+                updated: function(){
+                    console.log("Updated")
+                }
+            });
+        </script>
+    </body>
+</html>
